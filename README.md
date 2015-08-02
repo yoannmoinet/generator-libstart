@@ -1,5 +1,7 @@
 # LibStart
 
+[![Join the chat at https://gitter.im/yoannmoinet/generator-libstart](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/yoannmoinet/generator-libstart?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![npm version](https://img.shields.io/npm/v/generator-libstart.svg?style=flat)](http://badge.fury.io/js/generator-libstart)
 [![Build Status](https://img.shields.io/travis/yoannmoinet/generator-libstart.svg?style=flat)](https://travis-ci.org/yoannmoinet/generator-libstart)
 [![Join the chat at https://gitter.im/yoannmoinet/generator-libstart](https://img.shields.io/badge/gitter-join%20chat-brightgreen.svg?style=flat)](https://gitter.im/yoannmoinet/generator-libstart?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
