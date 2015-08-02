@@ -206,6 +206,6 @@ module.exports = yeoman.generators.Base.extend({
                     });
                 });
             }
-        }
+        });
     }
 });
