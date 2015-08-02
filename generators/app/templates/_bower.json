@@ -1,0 +1,15 @@
+{
+  "version": "0.0.0",
+  "name": "<%= libname %>",
+  <% if (hasGit) { %>"homepage": "https://github.com/<%= author.username %>/<%= libname %>",<% } %>
+  "author": "<% if (!author.full) { %><%= author.name %><% } else { %><%= author.full %><% } %>",
+  "description": "<%= description %>",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "license": "MIT",
+  "dependencies": {}
+}
+

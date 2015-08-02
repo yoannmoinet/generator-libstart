@@ -1,0 +1,30 @@
+{
+  "version": "0.0.0",
+  "name": "<%= libname %>",
+  "description": "<%= description %>",
+  "author": "<% if (!author.full) { %><%= author.name %><% } else { %><%= author.full %><% } %>",
+  "license": "MIT",
+  <% if (hasGit) { %>"repository": {
+    "type": "git",
+    "url": "https://github.com/<%= author.username %>/<%= libname %>.git"
+  },
+  "bugs": {
+    "url": "https://github.com/<%= author.username %>/<%= libname %>/issues"
+  },
+  "homepage": "https://github.com/<%= author.username %>/<%= libname %>",<% } %>
+  "main": "./dist/<%= libname %>.js",
+  "scripts": {
+    "posttest": "npm run-script format && npm run-script lint",
+    "preversion": "npm run-script build",
+    "postversion": "node ./bin/postversion.js",
+    "build": "npm test && npm run-script changelog && npm run-script umd && npm run-script uglify",
+    "test": "mocha",
+    "format": "jscs ./src/<%= libname %>.js ./test/<%= libname %>.spec.js",
+    "lint": "eslint ./src/<%= libname %>.js ./test/<%= libname %>.spec.js",
+    "umd": "umd <%= libname %> ./src/<%= libname %>.js ./dist/<%= libname %>.js",
+    "changelog": "node ./bin/changelog.js",
+    "uglify": "uglifyjs <%= libname %>.js -o ./dist/<%= libname %>.min.js -c -m"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
