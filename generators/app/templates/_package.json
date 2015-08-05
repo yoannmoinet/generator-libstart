@@ -1,6 +1,6 @@
 {
   "version": "0.0.0",
-  "name": "<%= libname %>",
+  "name": "<%= libRealName %>",
   "description": "<%= description %>",
   "author": "<% if (!author.full) { %><%= author.name %><% } else { %><%= author.full %><% } %>",
   "license": "MIT",

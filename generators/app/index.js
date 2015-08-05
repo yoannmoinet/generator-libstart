@@ -98,13 +98,13 @@ module.exports = yeoman.generators.Base.extend({
         }];
 
         self.prompt(prompts, function (props) {
-            self.prefs.libname =  _.camelCase(props.libname);
+            self.prefs.libRealName = props.libname;
+            self.prefs.libname =  _.kebabCase(props.libname);
             self.prefs.hasGit = props.gitUsername ? true : false;
             self.prefs.author.name = props.name;
             self.prefs.author.username = props.gitUsername;
             self.prefs.description = props.description;
             self.prefs.npmReserved = props.npmReserved;
-            // To access props later use this.props.someOption;
             done();
         });
     },
