@@ -33,7 +33,7 @@ describe('generator libstart:app', function () {
             './test/testingGenerator.spec.js',
             './src/testingGenerator.js',
             './bin/changelog.js',
-            './bin/postversion.js'
+            './bin/bowerSync.js'
         ]);
     });
 
