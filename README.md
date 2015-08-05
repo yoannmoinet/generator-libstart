@@ -40,6 +40,20 @@ yo libstart
 
 ----
 
+### Usage
+
+To generate your new library simply run :
+
+```bash
+yo libstart <name of your creation>
+```
+
+Answer to some questions and you're good to go.
+
+You'll be able to reserve your library's name into npm's registry if you whish to.
+
+In your new library, you'll have some scripts available to automate your development.
+
 #### Npm Scripts
 ##### `npm preversion` (auto)
 > Is run automatically before `npm bump` and runs `npm build`.
@@ -48,7 +62,7 @@ yo libstart
 > Is run automatically after `npm bump` and will synchronize `bower.json` with `package.js`'s new version, and will generate the changelog.
 
 ##### `npm build` (manual)
-> It runs `test`.
+> It runs `test`, that is hooked with everything else.
 
 ##### `npm pretest` (auto)
 > Is run automatically before `npm test` and will umdify and uglify the library.
