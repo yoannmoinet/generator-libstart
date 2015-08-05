@@ -186,6 +186,12 @@ module.exports = yeoman.generators.Base.extend({
                 this.destinationPath('./bin/'),
                 this.prefs
             );
+
+            this.fs.copyTpl(
+                this.templatePath('./src/lib.js'),
+                this.destinationPath('./dist/' + this.prefs.libname + '.min.js'),
+                this.prefs
+            );
         }
     },
 
