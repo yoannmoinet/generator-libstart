@@ -16,13 +16,16 @@
   "scripts": {
     "posttest": "npm run-script format && npm run-script lint",
     "preversion": "npm run-script build",
-    "postversion": "node ./bin/bowerSync.js",
-    "build": "npm test && npm run-script changelog && npm run-script umd && npm run-script uglify",
+    "postversion": "npm run-script bowerSync && npm run-script changelog",
+    "build": "npm test",
+    "pretest": "npm run-script umd && npm run-script uglify",
     "test": "mocha",
+    "posttest": "npm run-script format && npm run-script lint",
     "format": "jscs ./src/<%= libname %>.js ./test/<%= libname %>.spec.js",
     "lint": "eslint ./src/<%= libname %>.js ./test/<%= libname %>.spec.js",
     "umd": "umd <%= libname %> ./src/<%= libname %>.js ./dist/<%= libname %>.js",
     "changelog": "node ./bin/changelog.js",
+    "bowerSync": "node ./src/bowerSync.js",
     "uglify": "uglifyjs <%= libname %>.js -o ./dist/<%= libname %>.min.js -c -m"
   },
   "dependencies": {},
