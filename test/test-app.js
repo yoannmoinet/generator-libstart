@@ -30,8 +30,8 @@ describe('generator libstart:app', function () {
             '.jscsrc',
             '.eslintrc',
             './test/.eslintrc',
-            './test/testingGenerator.spec.js',
-            './src/testingGenerator.js',
+            './test/testing-generator.spec.js',
+            './src/testing-generator.js',
             './bin/changelog.js',
             './bin/bowerSync.js'
         ]);
@@ -50,21 +50,21 @@ describe('generator libstart:app', function () {
             var pkg = JSON.parse(results.pkg);
 
             assert.equal(pkg.author, 'Yoann Moinet');
-            assert.equal(pkg.name, 'testingGenerator');
+            assert.equal(pkg.name, 'Testing Generator');
             assert.equal(pkg.description, 'some description');
-            assert.equal(pkg.main, './dist/testingGenerator.js');
-            assert.equal(pkg.scripts.format, "jscs ./src/testingGenerator.js ./test/testingGenerator.spec.js");
-            assert.equal(pkg.scripts.lint, "eslint ./src/testingGenerator.js ./test/testingGenerator.spec.js");
-            assert.equal(pkg.scripts.umd, "umd testingGenerator ./src/testingGenerator.js ./dist/testingGenerator.js");
-            assert.equal(pkg.scripts.uglify, "uglifyjs testingGenerator.js -o ./dist/testingGenerator.min.js -c -m");
-            assert.equal(pkg.repository.url, "https://github.com/yoannmoinet/testingGenerator.git");
-            assert.equal(pkg.bugs.url, "https://github.com/yoannmoinet/testingGenerator/issues");
-            assert.equal(pkg.homepage, "https://github.com/yoannmoinet/testingGenerator");
+            assert.equal(pkg.main, './dist/testing-generator.js');
+            assert.equal(pkg.scripts.format, "jscs ./src/testing-generator.js ./test/testing-generator.spec.js");
+            assert.equal(pkg.scripts.lint, "eslint ./src/testing-generator.js ./test/testing-generator.spec.js");
+            assert.equal(pkg.scripts.umd, "umd testing-generator ./src/testing-generator.js ./dist/testing-generator.js");
+            assert.equal(pkg.scripts.uglify, "uglifyjs ./src/testing-generator.js -o ./dist/testing-generator.min.js -c -m");
+            assert.equal(pkg.repository.url, "https://github.com/yoannmoinet/testing-generator.git");
+            assert.equal(pkg.bugs.url, "https://github.com/yoannmoinet/testing-generator/issues");
+            assert.equal(pkg.homepage, "https://github.com/yoannmoinet/testing-generator");
 
             assert.equal(bower.author, 'Yoann Moinet');
-            assert.equal(bower.name, 'testingGenerator');
+            assert.equal(bower.name, 'Testing Generator');
             assert.equal(bower.description, 'some description');
-            assert.equal(bower.homepage, "https://github.com/yoannmoinet/testingGenerator");
+            assert.equal(bower.homepage, "https://github.com/yoannmoinet/testing-generator");
             done();
         });
 
