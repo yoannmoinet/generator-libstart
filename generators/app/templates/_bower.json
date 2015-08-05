@@ -1,6 +1,6 @@
 {
   "version": "0.0.0",
-  "name": "<%= libname %>",
+  "name": "<%= libRealName %>",
   <% if (hasGit) { %>"homepage": "https://github.com/<%= author.username %>/<%= libname %>",<% } %>
   "author": "<% if (!author.full) { %><%= author.name %><% } else { %><%= author.full %><% } %>",
   "description": "<%= description %>",
