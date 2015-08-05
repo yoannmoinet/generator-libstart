@@ -25,21 +25,39 @@ The generator will even **reserve its name** on npm's registery if you whish to,
 
 ----
 
-#### Npm Scripts
-##### `npm postest` (auto)
-> Is run automatically after `npm test` and controls formatting and linting.
+### Install
+To install generator-libstart from npm, run:
 
+```bash
+npm install -g yo generator-libstart
+```
+
+Finally, initiate the generator:
+
+```bash
+yo libstart
+```
+
+----
+
+#### Npm Scripts
 ##### `npm preversion` (auto)
 > Is run automatically before `npm bump` and runs `npm build`.
 
 ##### `npm postversion` (auto)
-> Is run automatically after `npm bump` and will synchronize `bower.json` with `package.js`'s new version.
+> Is run automatically after `npm bump` and will synchronize `bower.json` with `package.js`'s new version, and will generate the changelog.
 
 ##### `npm build` (manual)
-> It runs `test`, `changelog`, `umd` and `uglify`.
+> It runs `test`.
+
+##### `npm pretest` (auto)
+> Is run automatically before `npm test` and will umdify and uglify the library.
 
 ##### `npm test` (manual)
 > Tests.
+
+##### `npm postest` (auto)
+> Is run automatically after `npm test` and controls formatting and linting.
 
 #### Custom Scripts
 They are all run by the previous npm scripts but you can run them at your convenience.
@@ -55,6 +73,11 @@ They are all run by the previous npm scripts but you can run them at your conven
 
 ##### `npm run-script changelog`
 > Generate a changelog for your library based on your commits if you've followed one of the supported [convention](https://github.com/ajoslin/conventional-changelog/tree/master/conventions).
+> And will commit the changes automatically.
+
+##### `npm run-script bowerSync`
+> Will synchronize bower.json's version with package.json's.
+> And will commit the changes automatically.
 
 ##### `npm run-script uglify`
 > Uglify your library
@@ -75,28 +98,13 @@ library
 │
 └─── bin               // Helpers for npm scripts
 |    ├ changelog.js    // Is run with 'npm run-script changelog'
-|    └ postversion.js  // Is run with 'npm postversion'
+|    └ bowerSync.js    // Is run with 'npm postversion'
 |
 └─── src
 |    └ lib.js          // Main file
 |
 └─── test
      └ lib.spec.js     // Mocha tests
-```
-
-----
-
-### Install
-To install generator-libstart from npm, run:
-
-```bash
-npm install -g yo generator-libstart
-```
-
-Finally, initiate the generator:
-
-```bash
-yo libstart
 ```
 
 ----
