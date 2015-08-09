@@ -140,6 +140,11 @@ module.exports = yeoman.generators.Base.extend({
               this.templatePath('gitattributes'),
               this.destinationPath('.gitattributes')
             );
+
+            this.fs.copy(
+              this.templatePath('travis.yml'),
+              this.destinationPath('.travis.yml')
+            );
         }
     },
 
