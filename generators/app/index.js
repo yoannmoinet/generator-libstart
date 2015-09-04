@@ -8,7 +8,6 @@ var yosay = require('yosay');
 var exec = require('child_process').exec;
 var _ = require('lodash');
 var async = require('async');
-var npmReserve = require('npmreserve');
 
 module.exports = yeoman.generators.Base.extend({
     constructor: function () {
@@ -74,12 +73,6 @@ module.exports = yeoman.generators.Base.extend({
             default: self.libname || path.basename(process.cwd())
         },
         {
-            type: 'confirm',
-            name: 'npmReserved',
-            message: 'Would you like to reserve the name on npm\'s registry?',
-            default: true
-        },
-        {
             type: 'input',
             name: 'name',
             message: 'What\'s your name ?',
@@ -104,7 +97,6 @@ module.exports = yeoman.generators.Base.extend({
             self.prefs.author.name = props.name;
             self.prefs.author.username = props.gitUsername;
             self.prefs.description = props.description;
-            self.prefs.npmReserved = props.npmReserved;
             done();
         });
     },
@@ -214,18 +206,11 @@ module.exports = yeoman.generators.Base.extend({
         var self = this;
         self.log('Initializing GIT...');
         exec('git init', function (err) {
-            if (!err && self.prefs.npmReserved) {
-                self.log('Reserving ' + chalk.green(self.prefs.libname) + ' on npm...');
-                fs.readFile(path.join(process.cwd(), 'package.json'), function (err, data) {
-                    npmReserve(JSON.parse(data), function (err) {
-                        if (!err) {
-                            self.log(chalk.green('Package successfuly registered on https://www.npmjs.com/package/' + self.prefs.libname));
-                        } else {
-                            self.log(chalk.red('Sorry, could not registered library on npm\'s registry.'));
-                            self.log(chalk.dim(err));
-                        }
-                    });
-                });
+            if (!err) {
+                self.log(chalk.green('GIT successfuly initialized.'));
+            } else {
+                self.log(chalk.red('Sorry, could not initialized GIT.'));
+                self.log(chalk.dim(err));
             }
         });
     }

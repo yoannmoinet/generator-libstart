@@ -2,13 +2,6 @@
 ----
 > <%= description %>
 
-<% if (npmReserved) { %>
-## Install
-```node
-npm install <%= libname %> --save
-```
-<% } %>
-
 ----
 
 #### Npm Scripts

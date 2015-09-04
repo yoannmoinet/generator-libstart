@@ -14,7 +14,6 @@ describe('generator libstart:app', function () {
             .withOptions({skipInstall: true, noGitInspection: true})
             .withPrompts({
                 libname: 'Testing Generator',
-                npmReserved: false,
                 name: 'Yoann Moinet',
                 gitUsername: 'yoannmoinet',
                 description: 'some description'

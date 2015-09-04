@@ -23,8 +23,6 @@ It will come with :
 - testing ([mocha](http://mochajs.org/) + [expect.js](https://github.com/Automattic/expect.js))
 - building ([uglify-js](https://github.com/mishoo/UglifyJS2) + [umd](https://github.com/ForbesLindesay/umd))
 
-The generator will even **reserve its name** on npm's registery if you whish to, thanks to [npmreserve](https://github.com/IonicaBizau/npmreserve).
-
 ----
 
 ### Install
