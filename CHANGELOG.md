@@ -1,5 +1,11 @@
-<a name="0.0.5"></a>
-## 0.0.5 (2015-09-04)
+<a name="0.1.0"></a>
+# 0.1.0 (2015-09-04)
+
+
+
+
+<a name="0.1.0"></a>
+# 0.1.0 (2015-09-04)
 
 
 ### Bug Fixes
@@ -7,6 +13,10 @@
 * **lint:** linting ([6b8e308](https://github.com/yoannmoinet/generator-libstart/commit/6b8e308))
 * **npm:** remove useless bower ([6f703ee](https://github.com/yoannmoinet/generator-libstart/commit/6f703ee))
 * **npmreserve:** remove discontinued npm-reserve ([22eed34](https://github.com/yoannmoinet/generator-libstart/commit/22eed34))
+
+### Features
+
+* **changelog:** add conventional-changelog dep ([1aa58da](https://github.com/yoannmoinet/generator-libstart/commit/1aa58da))
 
 
 
