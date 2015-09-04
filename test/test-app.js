@@ -52,18 +52,30 @@ describe('generator libstart:app', function () {
             assert.equal(pkg.name, 'Testing Generator');
             assert.equal(pkg.description, 'some description');
             assert.equal(pkg.main, './dist/testing-generator.js');
-            assert.equal(pkg.scripts.format, "jscs ./src/testing-generator.js ./test/testing-generator.spec.js");
-            assert.equal(pkg.scripts.lint, "eslint ./src/testing-generator.js ./test/testing-generator.spec.js");
-            assert.equal(pkg.scripts.umd, "umd testing-generator ./src/testing-generator.js ./dist/testing-generator.js");
-            assert.equal(pkg.scripts.uglify, "uglifyjs ./src/testing-generator.js -o ./dist/testing-generator.min.js -c -m");
-            assert.equal(pkg.repository.url, "https://github.com/yoannmoinet/testing-generator.git");
-            assert.equal(pkg.bugs.url, "https://github.com/yoannmoinet/testing-generator/issues");
-            assert.equal(pkg.homepage, "https://github.com/yoannmoinet/testing-generator");
+            assert.equal(pkg.scripts.format,
+                'jscs ./src/testing-generator.js' +
+                    './test/testing-generator.spec.js');
+            assert.equal(pkg.scripts.lint,
+                'eslint ./src/testing-generator.js' +
+                    './test/testing-generator.spec.js');
+            assert.equal(pkg.scripts.umd,
+                'umd testing-generator ./src/testing-generator.js' +
+                    './dist/testing-generator.js');
+            assert.equal(pkg.scripts.uglify,
+                'uglifyjs ./src/testing-generator.js' +
+                    '-o ./dist/testing-generator.min.js -c -m');
+            assert.equal(pkg.repository.url,
+                'https://github.com/yoannmoinet/testing-generator.git');
+            assert.equal(pkg.bugs.url,
+                'https://github.com/yoannmoinet/testing-generator/issues');
+            assert.equal(pkg.homepage,
+                'https://github.com/yoannmoinet/testing-generator');
 
             assert.equal(bower.author, 'Yoann Moinet');
             assert.equal(bower.name, 'Testing Generator');
             assert.equal(bower.description, 'some description');
-            assert.equal(bower.homepage, "https://github.com/yoannmoinet/testing-generator");
+            assert.equal(bower.homepage,
+                'https://github.com/yoannmoinet/testing-generator');
             done();
         });
 

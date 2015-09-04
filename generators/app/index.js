@@ -168,7 +168,8 @@ module.exports = yeoman.generators.Base.extend({
 
             this.fs.copyTpl(
                 this.templatePath('./test/lib.spec.js'),
-                this.destinationPath('./test/' + this.prefs.libname + '.spec.js'),
+                this.destinationPath('./test/' + this.prefs.libname +
+                    '.spec.js'),
                 this.prefs
             );
 
@@ -186,7 +187,8 @@ module.exports = yeoman.generators.Base.extend({
 
             this.fs.copyTpl(
                 this.templatePath('./src/lib.js'),
-                this.destinationPath('./dist/' + this.prefs.libname + '.min.js'),
+                this.destinationPath('./dist/' + this.prefs.libname +
+                    '.min.js'),
                 this.prefs
             );
         }
