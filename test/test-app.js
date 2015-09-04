@@ -53,16 +53,16 @@ describe('generator libstart:app', function () {
             assert.equal(pkg.description, 'some description');
             assert.equal(pkg.main, './dist/testing-generator.js');
             assert.equal(pkg.scripts.format,
-                'jscs ./src/testing-generator.js' +
+                'jscs ./src/testing-generator.js ' +
                     './test/testing-generator.spec.js');
             assert.equal(pkg.scripts.lint,
-                'eslint ./src/testing-generator.js' +
+                'eslint ./src/testing-generator.js ' +
                     './test/testing-generator.spec.js');
             assert.equal(pkg.scripts.umd,
-                'umd testing-generator ./src/testing-generator.js' +
+                'umd testing-generator ./src/testing-generator.js ' +
                     './dist/testing-generator.js');
             assert.equal(pkg.scripts.uglify,
-                'uglifyjs ./src/testing-generator.js' +
+                'uglifyjs ./src/testing-generator.js ' +
                     '-o ./dist/testing-generator.min.js -c -m');
             assert.equal(pkg.repository.url,
                 'https://github.com/yoannmoinet/testing-generator.git');
