@@ -1,6 +1,6 @@
 {
   "name": "generator-libstart",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "Yeoman generator to start your UMD library.",
   "license": "MIT",
   "main": "app/index.js",
