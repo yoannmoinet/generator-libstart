@@ -2,9 +2,9 @@
 
 > [Yeoman](http://yeoman.io) generator to start your UMD library.
 
-[![npm version](https://img.shields.io/npm/v/generator-libstart.svg?style=flat)](http://badge.fury.io/js/generator-libstart)
-[![Build Status](https://img.shields.io/travis/yoannmoinet/generator-libstart.svg?style=flat)](https://travis-ci.org/yoannmoinet/generator-libstart)
-[![Join the chat at https://gitter.im/yoannmoinet/generator-libstart](https://img.shields.io/badge/gitter-join%20chat-brightgreen.svg?style=flat)](https://gitter.im/yoannmoinet/generator-libstart?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![npm version](https://img.shields.io/npm/v/generator-libstart.svg?style=flat-squared)](http://badge.fury.io/js/generator-libstart)
+[![Build Status](https://img.shields.io/travis/yoannmoinet/generator-libstart.svg?style=flat-squared)](https://travis-ci.org/yoannmoinet/generator-libstart)
+[![Join the chat at https://gitter.im/yoannmoinet/generator-libstart](https://img.shields.io/badge/gitter-join%20chat-brightgreen.svg?style=flat-squared)](https://gitter.im/yoannmoinet/generator-libstart?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ----
 
@@ -56,45 +56,48 @@ In your new library, you'll have some scripts available to automate your develop
 
 #### Npm Scripts
 ##### `npm preversion` (auto)
-> Is run automatically before `npm bump` and runs `npm build`.
+> It runs `npm build`.
 
 ##### `npm postversion` (auto)
-> Is run automatically after `npm bump` and will synchronize `bower.json` with `package.js`'s new version, and will generate the changelog.
-
-##### `npm build` (manual)
-> It runs `test`, that is hooked with everything else.
+> It runs `bowerSync` and `changelog`.
 
 ##### `npm pretest` (auto)
-> Is run automatically before `npm test` and will umdify and uglify the library.
+> It runs `build`.
 
 ##### `npm test` (manual)
-> Tests.
+> It launches tests with mocha.
 
 ##### `npm postest` (auto)
-> Is run automatically after `npm test` and controls formatting and linting.
+> It runs `format` and `lint`.
 
 #### Custom Scripts
 They are all run by the previous npm scripts but you can run them at your convenience.
 
-##### `npm run-script format`
+##### `npm run prebuild` (manual)
+> It runs `format` and `lint`.
+
+##### `npm run build` (manual)
+> It runs `umd` and `uglify`.
+
+##### `npm run format`
 > Test the formatting with **JSCS**
 
-##### `npm run-script lint`
+##### `npm run lint`
 > Lint with **ESLint**
 
-##### `npm run-script umd`
-> UMDify your library
+##### `npm run umd`
+> It packages your library with [umd](https://www.npmjs.com/package/umd)
 
-##### `npm run-script changelog`
-> Generate a changelog for your library based on your commits if you've followed one of the supported [convention](https://github.com/ajoslin/conventional-changelog/tree/master/conventions).
-> And will commit the changes automatically.
+##### `npm run changelog`
+> Generate a changelog for your library based on your commits if you've followed one of the supported [convention](https://github.com/ajoslin/conventional-changelog/tree/master/conventions),
+> and will commit the changes automatically.
 
-##### `npm run-script bowerSync`
-> Will synchronize bower.json's version with package.json's.
-> And will commit the changes automatically.
+##### `npm run bowerSync`
+> It synchronizes bower.json's version with package.json's,
+> and will commit the changes automatically.
 
-##### `npm run-script uglify`
-> Uglify your library
+##### `npm run uglify`
+> It uglifies your library.
 
 ----
 
@@ -111,7 +114,7 @@ library
 ├ bower.json
 │
 └─── bin               // Helpers for npm scripts
-|    ├ changelog.js    // Is run with 'npm run-script changelog'
+|    ├ changelog.js    // Is run with 'npm run changelog'
 |    └ bowerSync.js    // Is run with 'npm postversion'
 |
 └─── src

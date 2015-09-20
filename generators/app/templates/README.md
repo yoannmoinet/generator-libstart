@@ -1,39 +1,50 @@
 # <%= libname %>
-----
+
 > <%= description %>
 
 ----
 
 #### Npm Scripts
-##### `npm postest` (auto)
-> Is run automatically after `npm test` and controls formatting and linting.
-
 ##### `npm preversion` (auto)
-> Is run automatically before `npm bump` and runs `npm build`.
+> It runs `npm build`.
 
 ##### `npm postversion` (auto)
-> Is run automatically after `npm bump` and will synchronize `bower.json` with `package.js`'s new version.
+> It runs `bowerSync` and `changelog`.
 
-##### `npm build` (manual)
-> It runs `test`, `changelog`, `umd` and `uglify`.
+##### `npm pretest` (auto)
+> It runs `build`.
 
 ##### `npm test` (manual)
-> Tests.
+> It launches tests with mocha.
+
+##### `npm postest` (auto)
+> It runs `format` and `lint`.
 
 #### Custom Scripts
 They are all run by the previous npm scripts but you can run them at your convenience.
 
-##### `npm run-script format`
+##### `npm run prebuild` (manual)
+> It runs `format` and `lint`.
+
+##### `npm run build` (manual)
+> It runs `umd` and `uglify`.
+
+##### `npm run format`
 > Test the formatting with **JSCS**
 
-##### `npm run-script lint`
+##### `npm run lint`
 > Lint with **ESLint**
 
-##### `npm run-script umd`
-> UMDify your library
+##### `npm run umd`
+> It packages your library with [umd](https://www.npmjs.com/package/umd)
 
-##### `npm run-script changelog`
-> Generate a changelog for your library based on your commits if you've followed one of the supported [convention](https://github.com/ajoslin/conventional-changelog/tree/master/conventions).
+##### `npm run changelog`
+> Generate a changelog for your library based on your commits if you've followed one of the supported [convention](https://github.com/ajoslin/conventional-changelog/tree/master/conventions),
+> and will commit the changes automatically.
 
-##### `npm run-script uglify`
-> Uglify your library
+##### `npm run bowerSync`
+> It synchronizes bower.json's version with package.json's,
+> and will commit the changes automatically.
+
+##### `npm run uglify`
+> It uglifies your library.
