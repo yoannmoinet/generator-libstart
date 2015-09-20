@@ -1,15 +1,16 @@
-<a name="0.1.0"></a>
-# 0.1.0 (2015-09-04)
+<a name="0.1.1"></a>
+## 0.1.1 (2015-09-20)
 
 
 
 
-<a name="0.1.0"></a>
-# 0.1.0 (2015-09-04)
+<a name="0.1.1"></a>
+## 0.1.1 (2015-09-20)
 
 
 ### Bug Fixes
 
+* **jscs:** allow spaces in function declaration ([02d5db2](https://github.com/yoannmoinet/generator-libstart/commit/02d5db2))
 * **lint:** linting ([6b8e308](https://github.com/yoannmoinet/generator-libstart/commit/6b8e308))
 * **npm:** remove useless bower ([6f703ee](https://github.com/yoannmoinet/generator-libstart/commit/6f703ee))
 * **npmreserve:** remove discontinued npm-reserve ([22eed34](https://github.com/yoannmoinet/generator-libstart/commit/22eed34))
