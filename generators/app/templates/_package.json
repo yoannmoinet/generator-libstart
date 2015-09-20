@@ -14,13 +14,12 @@
   "homepage": "https://github.com/<%= author.username %>/<%= libname %>",<% } %>
   "main": "./dist/<%= libname %>.js",
   "scripts": {
-    "posttest": "npm run-script format && npm run-script lint",
-    "preversion": "npm run-script build",
-    "postversion": "npm run-script bowerSync && npm run-script changelog",
-    "build": "npm test",
-    "pretest": "npm run-script umd && npm run-script uglify",
+    "preversion": "npm run build",
+    "postversion": "npm run bowerSync && npm run changelog",
+    "prebuild": "npm run format && npm run lint",
+    "build": "npm run umd && npm run uglify",
+    "pretest": "npm run build",
     "test": "mocha",
-    "posttest": "npm run-script format && npm run-script lint",
     "format": "jscs ./src/<%= libname %>.js ./test/<%= libname %>.spec.js",
     "lint": "eslint ./src/<%= libname %>.js ./test/<%= libname %>.spec.js",
     "umd": "umd <%= libname %> ./src/<%= libname %>.js ./dist/<%= libname %>.js",
